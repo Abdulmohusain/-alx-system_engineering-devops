@@ -1,2 +1,2 @@
 #!/bin/bash
-heat /etc/passwd
+head /etc/passwd
