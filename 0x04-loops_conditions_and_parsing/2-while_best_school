@@ -2,7 +2,7 @@
 # This script is displaying "Best School" 10 times
 a=0
 
-while [ $a -lt 11 ]
+while [ $a -lt 10 ]
 do
 	echo "Best School"
 	((a++))
