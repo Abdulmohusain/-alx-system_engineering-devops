@@ -4,6 +4,7 @@ a=1
 
 while [ $a -lt 21 ]
 do
+	echo "$a"
 	if [ $a -eq 4 ]
 	then
 		echo "bad luck from China"
@@ -13,8 +14,6 @@ do
 	elif [ $a -eq 17 ]
 	then
 		echo "bad luck from Italy"
-	else
-		echo "$a"
 	fi
 	((a++))
 done
