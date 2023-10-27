@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 # Bash script that displays:
 #The content of the current directory In a list format
-
-for item in `ls`
+a=$(ls)
+for item in $a
 do
-	echo ${item#*-}
+	echo "${item#*-}"
 done
