@@ -9,4 +9,6 @@ sudo chmod -R 755 /var/www
 rm /var/www/html/*
 echo Hello World! > /var/www/html/index.html
 sudo sed -i '50a\		 rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default 
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+sudo sed -i '51a\		 error_page 404 /404.html;' /etc/nginx/sites-available/default
 sudo service nginx restart
