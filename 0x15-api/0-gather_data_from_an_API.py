@@ -8,7 +8,6 @@ import requests
 import sys
 
 
-
 def main():
     """main method"""
     employee_id = sys.argv[1]
