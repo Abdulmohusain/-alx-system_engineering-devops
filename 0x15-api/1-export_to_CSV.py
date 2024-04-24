@@ -28,7 +28,8 @@ def main():
         inner.append(task['title'])
         csv_list.append(inner)
 
-    with open("USER_ID.csv", 'w', newline='') as file:
+    filename = str(response_task[0]['userId']) + ".csv"
+    with open(filename, 'w', newline='') as file:
         writer = csv.writer(file)
         writer.writerows(csv_list)
 
