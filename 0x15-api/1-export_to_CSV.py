@@ -19,19 +19,15 @@ def main():
     response_user = requests.get(user_url).json()
     response_task = requests.get(task_url).json()
     username = response_user['username']
-    csv_list = []
+    csv_str = ""
     for task in response_task:
-        inner = []
-        inner.append(task['userId'])
-        inner.append(username)
-        inner.append(task['completed'])
-        inner.append(task['title'])
-        csv_list.append(inner)
-
+        csv_str = csv_str + '"{}"'.format(task['userId'])
+        csv_str = csv_str + ',"{}"'.format(username)
+        csv_str = csv_str + ',"{}"'.format(task['completed'])
+        csv_str = csv_str + ',"{}"\n'.format(task['title'])
     filename = str(response_task[0]['userId']) + ".csv"
     with open(filename, 'w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(csv_list)
+        file.write(csv_str)
 
 
 if __name__ == '__main__':
