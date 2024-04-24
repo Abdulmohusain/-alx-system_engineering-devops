@@ -8,6 +8,7 @@ import requests
 import sys
 
 
+
 def main():
     """main method"""
     employee_id = sys.argv[1]
@@ -30,4 +31,5 @@ def main():
         print("\t {}".format(task))
 
 
-main()
+if __name__ == '__main__':
+    main()
