@@ -20,14 +20,13 @@ def top_ten(subreddit):
     response = requests.get(url_link, headers=headers, allow_redirects=False)
 
     if response.status_code == 200:
-        if response.status_code == 200:
-            item = response.json()['data']['children']
-            all_titles = [
-                titl['data']['title']
-                for titl in item
-                if titl['kind'] == 't3'
-            ]
-            for titl in all_titles:
-                print(titl)
-        else:
-            return 0
+        item = response.json()['data']['children']
+        all_titles = [
+            titl['data']['title']
+            for titl in item
+            if titl['kind'] == 't3'
+        ]
+        for titl in all_titles:
+            print(titl)
+    else:
+        return None
